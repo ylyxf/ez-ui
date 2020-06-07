@@ -22,7 +22,7 @@ ezui.window = {
         var winDiv = window.top.$(`#_div_${winId}`, window.top.document);
 
         //url加上时间戳后缀
-        let url = ezui.uitls.timestampUrl(opts.url);
+        var url = ezui.uitls.timestampUrl(opts.url);
 
         //在容器中加载iframe
         var content = `<iframe scrolling="auto" name="${winId}" src="${url}" frameborder="0" style="width:100%;height:100%;" ></iframe><div style="clear:both;"/>`;
@@ -54,7 +54,7 @@ ezui.window = {
 
     },
     close: function (callbackParams, topTip) {
-        let winId = window.name;
+        var winId = window.name;
         if (data) {
             var winCallback = ezui.data.get('_wins')[winId].callback;
             winCallback(callbackParams);
@@ -71,12 +71,12 @@ ezui.window = {
         winDiv.window('close');
     },
     getParams: function () {
-        let winId = window.name;
+        var winId = window.name;
         return ezui.data.get('_wins')[winId].params;
     },
     setTitle: function (title) {
-        let winId = window.name;
-        let winDiv = Global.get('_wins')[winId].container;
+        var winId = window.name;
+        var winDiv = Global.get('_wins')[winId].container;
         winDiv.window('setTitle', title);
     },
 }

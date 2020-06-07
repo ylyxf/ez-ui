@@ -2,7 +2,7 @@ ezui.data = {
     _data: null,
 
     init: function () {
-        let isTop = top == self;
+        var isTop = top == self;
         if (isTop) {
             this._data = {};
         } else {
@@ -18,7 +18,7 @@ ezui.data = {
         if (!this._data[key]) {
             this._data[key] = {};
         }
-        let result = this._data[key];
+        var result = this._data[key];
         return result;
     }
 }

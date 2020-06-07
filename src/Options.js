@@ -2,7 +2,7 @@ ezui.options = {
     _options: null,
 
     init: function (options) {
-        let isTop = top == self;
+        var isTop = top == self;
         if (isTop) {
             this._options = options || {};
         } else {
@@ -18,7 +18,7 @@ ezui.options = {
         if (!this._options[key]) {
             this._options[key] = {};
         }
-        let result = this._options[key];
+        var result = this._options[key];
         return result;
     }
 }

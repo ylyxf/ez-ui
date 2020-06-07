@@ -11,14 +11,14 @@ ezui.dict = {
         });
     },
     getDict: function (dictCode) {
-        let dict = ezui.data.get('_dict');
+        var dict = ezui.data.get('_dict');
         return dict[dictCode];
     },
     getDictValue: function (dictCode, dictItemCode) {
-        let dict = ezui.data.get('_dict');
-        let result = null;
+        var dict = ezui.data.get('_dict');
+        var result = null;
         if (dict[dictCode]) {
-            let dictItemArray = dict[dictCode];
+            var dictItemArray = dict[dictCode];
             for (index in dictItemArray) {
                 dictItem = dictItemArray[index];
                 if (dictItem.value == dictItemCode) {
