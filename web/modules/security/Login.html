@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EZ-UI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="../../loader.js"></script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            /*定义body的元素垂直居中*/
+            justify-content: center;
+            /*定义body的里的元素水平居中*/
+        }
+
+        .loginWindow {
+            width: 400px;
+            height: 300px;
+            padding: 30px 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='loginWindow easyui-panel' title="登录">
+        <form id='loginForm' method="POST">
+            <div style="margin-bottom:20px">
+                <div>账号:</div>
+                <input class="easyui-textbox" name='account' prompt="请输入账号" data-options="required:true"
+                    style="width:100%;height:32px">
+            </div>
+            <div style="margin-bottom:20px">
+                <div>密码:</div>
+                <input class="easyui-passwordbox" name='password' prompt="请输入密码" lastDelay="0" checkInterval="0"
+                    data-options="required:true" showEye="true" style="width:100%;height:32px">
+            </div>
+
+            <div>
+                <id id="loginBtn" type="submit" class="easyui-linkbutton" iconCls="icon-ok"
+                    style="width:100%;height:32px">登录</a>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+
+    $(document).ready(function () {
+        $('#loginBtn').on('click', function () {
+            $('#loginForm').form('submit', {
+                dataType: 'text',
+                iframe: false,
+                url: `${serviceRoot}/security/login`,
+                queryParams: {
+                    _maskId: 'body',
+                    _maskMsg: '正在验证用户名密码...'
+                },
+                success: function (data) {
+                    window.top.location.href = `${webRoot}/`;
+                    //ezui.window.close();
+                }
+            });
+        })
+
+    });
+
+</script>
+
+</html>

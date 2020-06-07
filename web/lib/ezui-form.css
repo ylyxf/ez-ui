@@ -1,0 +1,29 @@
+.ezui-form table {
+    font-size: 14px;
+    width:100%;
+    border-collapse:separate;
+    table-layout:fixed;
+    word-break:break-all;
+}
+
+.ezui-form table td ,.ezui-form  table th {
+    padding:7px;
+    border-bottom: dotted  1px #E0E0E0	;
+    border-right: dotted  1px #E0E0E0	;
+    background: #FCFCFC	;
+}
+
+.ezui-form table .label {
+    text-align: right;
+    background: #FCFCFC;
+}
+
+.ezui-form table .fix {
+    border-right:none;
+    background: #FFFFFF;
+}
+
+form {
+    margin-block-end:0px;
+}
+
