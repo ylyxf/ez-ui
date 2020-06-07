@@ -1,2 +1,4 @@
 # ez-ui
 ez-ui是jeasyui的辅助工具类
+
+ezui没有使用现代的JavaScript编程技术，它只使用了webpack将多个JavaScript文件合成为一个文件。
