@@ -83,8 +83,8 @@ $.ajax = function (settings) {
                 }
                 break;
             case (401):
-                if (window.ezui.options._options.on401) {
-                    window.ezui.options._options.on401(settings)
+                if (window.top.ezui.options._options.on401) {
+                    window.top.ezui.options._options.on401(settings)
                 } else {
                     alert('无法识别当前用户，请重新登录');
                 }
